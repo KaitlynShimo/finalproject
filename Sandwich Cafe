@@ -1,0 +1,126 @@
+var total = 0;
+onEvent("makesandwichbtn", "click", function( ) {
+  setScreen("breadscreen");
+});
+var bread = 0;
+var white = 0;
+var sourdough = 0;
+var wheat = 0;
+var rye = 0;
+function addbread() {
+  if (white == 1) {
+    total++;
+  } else if ((sourdough == 1)) {
+    total++;
+  } else if ((wheat == 1)) {
+    total++;
+  } else if ((rye == 1)) {
+    total++;
+  }
+}
+onEvent("addwhitebtn", "click", function( ) {
+  setScreen("cheeseScreen");
+  addbread();
+  white++;
+});
+onEvent("addsourdoughbtn", "click", function( ) {
+  setScreen("cheeseScreen");
+  addbread();
+  sourdough++;
+});
+onEvent("addwheatbtn", "click", function( ) {
+  setScreen("cheeseScreen");
+  addbread();
+  wheat++;
+});
+onEvent("addrye", "click", function( ) {
+  setScreen("cheeseScreen");
+  addbread();
+  rye++;
+});
+
+
+
+
+
+var cheddar = 0;
+var swiss = 0;
+var mozzarella = 0;
+
+
+onEvent ("makesandwichbtn", "click", function (){
+  setScreen ("breadScreen");
+});
+onEvent ("choosecheesebtn", "click", function (){
+  setScreen ("cheeseScreen");
+});
+onEvent("cheddarAddBtn", "click", function( ) {
+  addCheese ();
+  cheddar++;
+});
+onEvent("swissAddBtn", "click", function( ) {
+  addCheese ();
+  swiss++;
+});
+onEvent("mozzarellaAddBtn", "click", function( ) {
+  addCheese ();
+  mozzarella++
+});
+
+
+
+
+function addCheese () {
+  if (cheddar == 1) {
+    total++;
+    hideElement("cheddarAddBtn");
+  } else if (swiss == 1) {
+    total++;
+    hideElement("swissAddBtn");
+  } else if (mozzarella == 1) {
+    total++;
+    hideElement("mozzarellaAddBtn");
+  }
+}
+
+
+
+onEvent ("lettuceAddBtn", "click", function () {
+  updateTotal ();
+});
+onEvent ("onionAddBtn", "click", function () {
+  updateTotal();
+});
+onEvent ("cucumberAddBtn", "click", function () {
+  updateTotal ();
+});
+onEvent ("tomatoAddBtn", "click", function (){
+  updateTotal ();
+});
+onEvent ("chooseSaucesBtn", "click", function () {
+  setScreen ("saucescreen");
+});
+
+
+function updateTotal () {
+ total++;
+ setText ("totalLabel", total);
+}
+
+
+
+var mayo = 0;
+var mustard = 0;
+var pesto = 0;
+onEvent("addmayobtn", "click", function( ) {
+  updateTotal();
+});
+onEvent("addmustardbtn", "click", function( ) {
+  updateTotal();
+});
+onEvent("addpestobtn", "click", function( ) {
+  updateTotal();
+});
+onEvent("gettotalbtn", "click", function( ) {
+  setScreen("");
+});
